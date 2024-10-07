@@ -4,7 +4,7 @@ param location string
 param serverFarmSku string
 param appOs string
 
-resource appServiceResourceGroup 'Microsoft.Resources/resourceGroups@2024-07-01' = {
+resource appServiceResourceGroup 'Microsoft.Resources/resourceGroups@2024-03-01' = {
   name: 'appServiceLi'
   location: location
 }

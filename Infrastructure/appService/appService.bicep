@@ -24,7 +24,7 @@ resource webapp 'Microsoft.Web/sites@2023-12-01' = {
     serverFarmId: serverFarm.id
     siteConfig: {
       //linuxFxVersion: 'DOTNETCORE|8.0' // deployment from code
-      linuxFxVersion: 'DOCKER|kamil4921/appServiceLi:1.0' // in case if you want to host your webappp from container and use dockerhub as a repo
+      linuxFxVersion: 'DOCKER|kamil4921/appservice:1' // in case if you want to host your webappp from container and use dockerhub as a repo
     }
     reserved: true
   }
