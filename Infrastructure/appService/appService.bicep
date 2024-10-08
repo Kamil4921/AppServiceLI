@@ -1,6 +1,5 @@
 param location string
 param serverFarmSku string
-param appOs string
 
 resource serverFarm 'Microsoft.Web/serverfarms@2023-12-01' = {
   name: 'appService-${uniqueString(resourceGroup().id)}'
@@ -9,7 +8,6 @@ resource serverFarm 'Microsoft.Web/serverfarms@2023-12-01' = {
     name: serverFarmSku
   }
 
-  kind: appOs
   properties: {
     reserved: true //must be to host app service as a linux
   }
@@ -18,7 +16,6 @@ resource serverFarm 'Microsoft.Web/serverfarms@2023-12-01' = {
 resource webapp 'Microsoft.Web/sites@2023-12-01' = {
   name: 'webApp-${uniqueString(resourceGroup().id)}'
   location: location
-  kind: appOs
   
   properties: {
     serverFarmId: serverFarm.id

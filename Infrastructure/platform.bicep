@@ -2,7 +2,6 @@ targetScope = 'subscription'
 
 param location string
 param serverFarmSku string
-param appOs string
 
 resource appServiceResourceGroup 'Microsoft.Resources/resourceGroups@2024-03-01' = {
   name: 'appServiceLi'
@@ -15,6 +14,5 @@ module appServiceLiResourcesDeployment 'appService/appService.bicep' = {
   params: {
     location: location
     serverFarmSku: serverFarmSku
-    appOs: appOs
   }
 }
